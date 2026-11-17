@@ -1,0 +1,6 @@
+{
+  "name": "Book Butler",
+  "description": "متجر كتب إلكتروني متكامل باللغة العربية مع ترشيحات أسبوعية وشهرية، سلة مشتريات، ولوحة تحكم للمشرف.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

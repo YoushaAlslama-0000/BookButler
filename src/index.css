@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Butler Display Font (Latin glyphs) */
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/ButlerLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+2000-206F, U+20A0-20CF;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/ButlerRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+2000-206F, U+20A0-20CF;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/ButlerMedium.otf') format('opentype');
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+2000-206F, U+20A0-20CF;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/ButlerBold.otf') format('opentype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+2000-206F, U+20A0-20CF;
+}
+
+/* Lantex (LANTX) Arabic Font */
+@font-face {
+  font-family: 'Lantex';
+  src: url('/fonts/lantx/LANTX-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lantex';
+  src: url('/fonts/lantx/LANTX-Regular.otf') format('opentype');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lantex';
+  src: url('/fonts/lantx/LANTX-Bold.otf') format('opentype');
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --bg-light: #F1EBE3;
+    --text-light: #001D51;
+    --nav-light: #001D51;
+    --accent: #ff5c40;
+    --icon-inactive: #737373;
+    --icon-active: #F1EBE3;
+  }
+
+  html {
+    font-family: 'Butler', 'Lantex', 'Cairo', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F1EBE3;
+    color: #001D51;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html.dark body {
+    background: linear-gradient(
+      180deg,
+      #000B21 0%,
+      #001334 25%,
+      #072761 50%,
+      #001334 75%,
+      #000B21 100%
+    );
+    background-attachment: fixed;
+    color: #F1EBE3;
+  }
+}
+
+.font-display {
+  font-family: 'Butler', 'Lantex', 'Amiri', 'Cairo', serif;
+}
+
+.font-butler {
+  font-family: 'Butler', serif;
+}
+
+.font-mono-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
